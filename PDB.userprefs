@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SceneFadeInOut.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerHealth.js">
     <Files>
-      <File FileName="Assets\Scripts\Player\Player_controller.js" Line="4" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerHealth.js" Line="94" Column="4" />
-      <File FileName="Assets\Scripts\SceneFadeInOut.js" Line="63" Column="19" />
+      <File FileName="Assets\Scripts\Player\PlayerHealth.js" Line="50" Column="31" />
+      <File FileName="Assets\Scripts\Player\Player_controller.js" Line="10" Column="34" />
+      <File FileName="Assets\Scripts\Enemy_controller.js" Line="7" Column="25" />
+      <File FileName="Assets\Scripts\Weapons\Arrow.js" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

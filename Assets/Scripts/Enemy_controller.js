@@ -1,12 +1,14 @@
 ﻿#pragma strict
 
 public var speed : float = 5.0f;
-public var player : Transform;
 
 
+private var player : Transform;
+private var playerHealth : PlayerHealth;                    // Reference to the player's health.
 
 function Start () {
 	player = GameObject.FindWithTag("Player").transform;
+	playerHealth = player.gameObject.GetComponent(PlayerHealth);
 }
 
 function FixedUpdate () {
@@ -15,5 +17,14 @@ function FixedUpdate () {
 	transform.eulerAngles = new Vector3(0, 0, z);
 	
 	rigidbody2D.AddForce(gameObject.transform.up * speed);
+	
+}
+
+function OnCollisionEnter2D(collider: Collision2D) {
+
+	if (collider.gameObject.tag == "Player")
+	{
+		playerHealth.TakeDamage(100.0f);
+	}
 	
 }

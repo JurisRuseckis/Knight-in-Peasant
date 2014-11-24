@@ -2,6 +2,7 @@
 
 public var speed : float = 35.0f;
 private var anim : Animator;
+private var ActiveWeapon = "SwordAttack";
 
 function Start () 
 {
@@ -10,9 +11,22 @@ function Start ()
 
 function Update()
 {
-	if(Input.GetMouseButtonDown (0))
+	if(Input.GetButtonDown ("PrimaryWeapon"))
 	{
-		anim.SetTrigger("Attack");
+		ActiveWeapon = "SwordAttack";
+	}
+	if(Input.GetButtonDown ("SecondaryWeapon"))
+	{
+		ActiveWeapon = "SpearAttack";
+	}
+	if(Input.GetButtonDown ("RangedWeapon"))
+	{
+		ActiveWeapon = "BowAttack";
+	}
+	
+	if(Input.GetButtonDown ("Fire1")) 
+	{
+		anim.SetTrigger(ActiveWeapon);
 	}
 }
 

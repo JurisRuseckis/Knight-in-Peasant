@@ -7,7 +7,7 @@ private var ActiveWeapon = "SwordAttack";
 
 function Start () 
 {
-	anim = GetComponent("Animator");
+	anim = GetComponent(Animator);
 }
 
 function Update()

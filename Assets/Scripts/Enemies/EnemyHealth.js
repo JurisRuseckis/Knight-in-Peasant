@@ -1,11 +1,12 @@
 ﻿#pragma strict
 
-public var health : float = 10f;                           
+private var health : float = 10f;
+private var MaxHealth : float = 10f;
 
 private var anim : Animator;                                // Reference to the animator component.
 private var enemyController : Enemy_controller;            
 private var textSpawner : TextSpawner;
-private var uI : UI;
+//private var uI : UI;
 private var isDead : boolean;                          
 
 
@@ -15,7 +16,7 @@ function Awake ()
     anim = GetComponent(Animator);
     enemyController = GetComponent(Enemy_controller);
     textSpawner = GameObject.FindGameObjectWithTag("GameController").GetComponent(TextSpawner);
-    uI = GameObject.FindGameObjectWithTag("GameController").GetComponent(UI);
+    //uI = GameObject.FindGameObjectWithTag("GameController").GetComponent(UI);
 }
 
 
@@ -31,15 +32,16 @@ function Update ()
         {
             EnemyDead();
         }
+    } else {
+
     }
 }
-
 
 function EnemyDying ()
 {
     // The player is now dead.
     isDead = true;
-    uI.AddPoints(10);
+    //uI.AddPoints(10);
 }
 
 function EnemyDead ()
@@ -57,6 +59,7 @@ public function TakeDamage (amount : float)
     // Decrement the player's health by amount.
     health -= amount;
     var ToViewport : Vector3 = Camera.main.WorldToViewportPoint(transform.position);
-    textSpawner.SpawnDmgText(amount, ToViewport.x, ToViewport.y);
+    textSpawner.SpawnDmgText("-" + amount.ToString(), ToViewport.x - 0.02f, ToViewport.y + 0.05f, Color.blue);
+	//textSpawner.SpawnDmgText(health.ToString(), ToViewport.x + 0.02f, ToViewport.y + 0.05f, Color.white);
 }
 

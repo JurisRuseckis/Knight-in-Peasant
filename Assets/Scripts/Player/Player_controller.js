@@ -44,6 +44,7 @@ function FixedUpdate ()
 	//movement
 	var movement = Input.GetAxis("Vertical");
 	rigidbody2D.AddForce(gameObject.transform.up * speed * movement);
+	anim.SetFloat("Speed", Mathf.Abs(movement));
 	
 
 }

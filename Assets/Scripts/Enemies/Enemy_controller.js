@@ -24,7 +24,7 @@ function OnCollisionEnter2D(collider: Collision2D) {
 
 	if (collider.gameObject.tag == "Player")
 	{
-		playerHealth.TakeDamage(10.0f);
+		playerHealth.TakeDamage(10);
 	}
 	
 }

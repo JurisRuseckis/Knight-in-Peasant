@@ -25,10 +25,12 @@ function Update()
 		ActiveWeapon = "BowAttack";
 	}
 	
-	if(Input.GetButtonDown ("Fire1")) 
-	{
+	if(Input.GetButtonDown ("Fire1")) {
 		anim.SetTrigger(ActiveWeapon);
-	}
+	} else if(Input.GetButtonDown("Fire2")) {
+		anim.SetTrigger(ActiveWeapon);
+		anim.SetTrigger("SpecialAttack");
+	};
 }
 
 function FixedUpdate () 
